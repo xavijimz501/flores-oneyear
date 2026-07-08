@@ -2,17 +2,6 @@
   --scale: 1.0;
 }
 
-
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fae1dd;
-  /* Evita desbordamiento en móviles 
-  overflow: hidden;
-} */
-
 body {
   margin: 0;
   padding: 0;
@@ -25,11 +14,8 @@ body {
   overflow: hidden;
 }
 
-/* .container {
-  position: relative;
-} */
-
 .container {
+  position: relative;
   /* Escala el contenedor al 90% del ancho del celular para dejar aire a los lados */
   width: 90vw;
   max-width: 400px;
@@ -38,21 +24,17 @@ body {
   justify-content: center;
   align-items: center;
 
-  position: relative;
+  /* Aplica el escalado aquí para que afecte a todo lo de adentro */
+  transform: scale(1.1);
+
 
 }
-
-/* .valentines {
-  position: relative;
-  top: 50px;
-  cursor: pointer;
-  animation: up 3s linear infinite;
-} */
 
 .valentines {
   /* Usamos transform: scale() para agrandar todo el conjunto proporcionalmente */
   transform: scale(1.1);
   transform-origin: center;
+  animation: up 3s linear infinite;
 }
 
 @keyframes up {
@@ -171,6 +153,7 @@ body {
   justify-content: center;
   z-index: 1;
   /* Asegura que el lazo esté sobre la carta */
+
 }
 
 .Lazocoquette img {
@@ -178,26 +161,10 @@ body {
   max-height: 50px;
   width: auto;
   height: auto;
-}
-
-/* Ajusta el margin-top según sea necesario para controlar la posición vertical del lazo */
-.Lazocoquette img {
-  margin-top: 95px;
   animation: up 3s linear infinite;
-  /* Añade la animación */
 }
 
-@keyframes up {
 
-  0%,
-  100% {
-    transform: scale(1.5) translateY(0);
-  }
-
-  50% {
-    transform: scale(1.5) translateY(-30px);
-  }
-}
 
 
 .one,
