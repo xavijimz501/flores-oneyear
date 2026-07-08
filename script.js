@@ -7,6 +7,8 @@ $(document).ready(function () {
         },
         "slow"
       );
+      audio.currentTime = 3;
+      audio.play().catch(err => console.log("Playback prevented:", err));
     })
     .mouseleave(function () {
       $(".card").stop().animate(
@@ -18,8 +20,15 @@ $(document).ready(function () {
     });
   const carta = document.getElementById("card");
   const backFace = document.querySelector(".back-face");
+  const audio = document.getElementById("background-music");
 
   carta.addEventListener("click", (e) => {
+    // Play audio on first user click gesture starting from 3 seconds
+    // if (audio && audio.paused) {
+    // audio.currentTime = 3;
+    // audio.play().catch(err => console.log("Playback prevented:", err));
+    // }
+
     // If we click the back-face, let the backFace click handler take care of transition.
     // Otherwise, toggle the flip animation.
     if (!e.target.closest(".back-face")) {
@@ -29,9 +38,9 @@ $(document).ready(function () {
 
   backFace.addEventListener("click", (e) => {
     e.stopPropagation(); // prevent card click event from toggling 'girar' back
-    
+
     $(".container").addClass("slide-down-out");
-    
+
     // Una vez que se mueva y desaparezca, mostrar el componente index-cara.html
     setTimeout(() => {
       $(".container").addClass("hidden");
@@ -40,9 +49,9 @@ $(document).ready(function () {
   });
 
   // Al aceptar, desaparece con el mismo efecto de la carta y muestra el contenido de index-run.html
-  $("#btn-aceptar").on("click", function() {
+  $("#btn-aceptar").on("click", function () {
     $(".bunny-cara-container").addClass("slide-down-out");
-    
+
     setTimeout(() => {
       $(".bunny-cara-container").addClass("hidden");
       $(".bunny-run-container").removeClass("hidden");
