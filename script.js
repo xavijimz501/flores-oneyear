@@ -7,8 +7,8 @@ $(document).ready(function () {
         },
         "slow"
       );
-      audio.currentTime = 3;
-      audio.play().catch(err => console.log("Playback prevented:", err));
+      // audio.currentTime = 3;
+      // audio.play().catch(err => console.log("Playback prevented:", err));
     })
     .mouseleave(function () {
       $(".card").stop().animate(
@@ -25,8 +25,8 @@ $(document).ready(function () {
   carta.addEventListener("click", (e) => {
     // Play audio on first user click gesture starting from 3 seconds
     // if (audio && audio.paused) {
-    // audio.currentTime = 3;
-    // audio.play().catch(err => console.log("Playback prevented:", err));
+    audio.currentTime = 2;
+    audio.play();
     // }
 
     // If we click the back-face, let the backFace click handler take care of transition.

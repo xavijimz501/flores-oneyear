@@ -153,6 +153,7 @@ body {
 
   font-size: calc(20px * var(--scale));
   line-height: 1.2;
+  letter-spacing: .6px;
 }
 
 
